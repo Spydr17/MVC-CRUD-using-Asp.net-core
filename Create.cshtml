@@ -1,0 +1,73 @@
+﻿@model appmvc.Models.SDIstudent
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SDIstudent</h4>
+<hr />
+<div class="row justify-content-center p-3 m-2 bg-success">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="studName" class="control-label"></label>
+                <input asp-for="studName" class="form-control" />
+                <span asp-validation-for="studName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade" class="control-label"></label>
+                <select asp-for="Trade" class="form-control">
+                    <option>IOT</option>
+                    <option>CNC</option>
+                    <option>Building Automation</option>
+                    <option>PLC</option>
+                </select>
+                <span asp-validation-for="Trade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <input asp-for="Course" class="form-control" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="skills" class="control-label"></label>
+                <select asp-for="skills" class="form-control">
+                    <option value="">--Select Skills--</option>
+                    <option>Python Django</option>
+                    <option>Asp.net</option>
+                    <option>ReactJS</option>
+                    <option>WordPress</option>
+                </select>
+                <span asp-validation-for="skills" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="language_known" class="control-label"></label>
+                <select asp-for="language_known" class="form-control">
+                    <option>--language Known--</option>
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>Python</option>
+                    <option>JavaScript</option>
+                </select>
+                <span asp-validation-for="language_known" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button class="rounded-1 bg-info text-center">
+        <a asp-action="Index">Back to List</a>
+    </button>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

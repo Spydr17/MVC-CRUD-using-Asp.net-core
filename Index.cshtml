@@ -1,0 +1,65 @@
+﻿@model IEnumerable<appmvc.Models.SDIstudent>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<button class="bg-danger rounded p-2 m-2">
+    <a href="@Url.Action("Index", "CompanyModels")" class="text-decoration-none text-white">Companies</a>
+</button>
+<table class="table table-responsive-xl table-hover table-bordered bg-dark text-white-50 table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.skills)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.language_known)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.studName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skills)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.language_known)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="text-center">
+    <button class="bg-warning p-2 m-2 text-lg-center rounded-1 ">
+        <a asp-action="Create" class="text-decoration-none">Add New Student</a>
+    </button>
+</div>
+

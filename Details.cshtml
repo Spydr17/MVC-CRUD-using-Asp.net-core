@@ -1,0 +1,48 @@
+﻿@model appmvc.Models.SDIstudent
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SDIstudent</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Trade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Trade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.skills)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.skills)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.language_known)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.language_known)
+        </dd>
+    </dl>
+</div> 
+<div>
+    <button><a asp-action="Edit" asp-route-id="@Model?.id">Edit</a></button> |
+    <button><a asp-action="Index">Back to List</a></button>
+</div>

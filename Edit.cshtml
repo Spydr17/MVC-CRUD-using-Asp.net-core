@@ -1,0 +1,54 @@
+﻿@model appmvc.Models.SDIstudent
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SDIstudent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="studName" class="control-label"></label>
+                <input asp-for="studName" class="form-control" />
+                <span asp-validation-for="studName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trade" class="control-label"></label>
+                <input asp-for="Trade" class="form-control" />
+                <span asp-validation-for="Trade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <input asp-for="Course" class="form-control" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="skills" class="control-label"></label>
+                <input asp-for="skills" class="form-control" />
+                <span asp-validation-for="skills" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="language_known" class="control-label"></label>
+                <input asp-for="language_known" class="form-control" />
+                <span asp-validation-for="language_known" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
